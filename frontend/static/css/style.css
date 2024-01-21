@@ -1,0 +1,16 @@
+/* TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* CUSTOM FONTS */
+
+/* Sans: Aspekta */
+@font-face {
+  font-family: 'AspektaVariable';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url('../font/Aspekta.woff2') format('woff2');
+}

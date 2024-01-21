@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+.installed.cfg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Translations
+*.mo
+*.pot
+
+# PyBuilder
+target/
+
+# Environments
+.env
+.venv
+env.bak/
+venv.bak/
+
+# NPM
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Frontend build directories
+frontend/build/
+frontend/dist/
+
+# Tailwind CSS build output
+frontend/static/css/tailwind.css
+
+# IDE specific files
+# JetBrains
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+
+# Other files
+*.swp
+*.bak
+*.tmp
+*~
