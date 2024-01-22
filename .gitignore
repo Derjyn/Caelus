@@ -9,16 +9,9 @@ build/
 dist/
 .installed.cfg
 
-# PyInstaller
-*.manifest
-*.spec
-
 # Translations
 *.mo
 *.pot
-
-# PyBuilder
-target/
 
 # Environments
 .env
@@ -26,21 +19,17 @@ target/
 env.bak/
 venv.bak/
 
+# Poetry
+poetry.lock
+
 # NPM
 node_modules/
 package-lock.json
 npm-debug.log*
 
-# Frontend build directories
-frontend/build/
-frontend/dist/
-
-# Tailwind CSS build output
+# Frontend build
 frontend/static/css/tailwind.css
-
-# IDE specific files
-# JetBrains
-.idea/
+frontend/static/js/htmx.min.js
 
 # VS Code
 .vscode/

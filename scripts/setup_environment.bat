@@ -66,12 +66,7 @@ echo.
 
 ::= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-call npm install tailwindcss
-call npm install @tailwindcss/typography
-call npm install @tailwindcss/forms
-call npm install @tailwindcss/aspect-ratio
-call npm install @tailwindcss/container-queries
-call npm install htmx.org
+call npm install htmx.org tailwindcss @tailwindcss/typography @tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/container-queries
 
 if %ERRORLEVEL% neq 0 (
     echo "Error: NPM install failed."

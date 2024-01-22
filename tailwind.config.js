@@ -6,12 +6,11 @@ module.exports = {
       './frontend/templates/**/*.{html,js}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'dispaly': ['AspektaVariable, ui-serif'],
-        'dispaly': ['MonaspaceKrypton, ui-monospace'],
-      }
-    },
+    fontFamily: {
+      'sans': ['Aspekta', 'ui-sans-serif'],
+      'mono': ['MonaspaceKrypton', 'ui-monospace'],
+      'display': ['Aspekta', 'ui-sans-serif'],
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),

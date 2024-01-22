@@ -2,24 +2,23 @@
 
 # == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
 # Imports
-# import asyncio
-
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from .services.external_data_manager import fetch_external_data_test
+from .routers import geocode_data, weather_data, environment_data
 
 # == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 # FastAPI application
 app = FastAPI()
 
+
 # == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 # Configure CORS for the application
 app.add_middleware(
@@ -31,11 +30,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 # Prime static and template directories
 app.mount("/static", StaticFiles(directory="frontend/static"), name="static")
 templates = Jinja2Templates(directory="frontend/templates")
+
+
+# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
+app.include_router(geocode_data.router)
+app.include_router(weather_data.router)
+app.include_router(environment_data.router)
+# Include other routes as necessary
+
 
 # == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -43,22 +54,6 @@ templates = Jinja2Templates(directory="frontend/templates")
 @app.get("/")
 async def read_root(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
-
-
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-
-@app.get("/data/{data_type}")
-async def get_data(data_type: str):
-    try:
-        data = await fetch_external_data_test(data_type)
-        return data
-    except HTTPException as e:
-        # This will re-raise the HTTPException caught from fetch_external_data_test
-        raise e
-    except Exception as exc:
-        # Catch-all for any unexpected errors
-        raise HTTPException(status_code=500, detail=str(exc))
 
 
 # == EOF = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

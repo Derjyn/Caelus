@@ -31,7 +31,8 @@ echo.
 
 ::= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-call uvicorn backend.app.main:app --reload
+call uvicorn backend.app.main:app --reload --log-level debug
+call npx tailwindcss -i frontend/static/css/style.css -o frontend/static/css/tailwind.css --watch
 
 if %ERRORLEVEL% neq 0 (
     echo "Error: Caelus application backend ran into a mysterious error..."

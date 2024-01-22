@@ -2,6 +2,23 @@
 
 All notable changes to Caelus will be documented in this file.
 
+## [0.1.1-alpha] - 2024-01-22
+
+### Added
+
+- Made successful communication with external data sources:
+  - US Census Burea
+  - National Weather Service
+- Got data displayed on the frontend (_albeit, in JSON_).
+
+### Changed
+
+- General code cleanup and housekeeping.
+- Refactor of routing and data fetching functions.
+- Utility scripts got some buffs:
+  - Caught some more files/directories to scrub for reset/pre-commit.
+  - Got Tailwind CSS builder watching for changes when server is up (_for dev only_).
+
 ## [0.1.0-alpha] - 2024-01-21
 
 ### Added
@@ -15,23 +32,3 @@ All notable changes to Caelus will be documented in this file.
 - Static file serving setup for frontend assets.
 - Simulated "test" endpoint for local development and testing.
 - Initial `CHANGELOG.md` to document project changes.
-
-### Changed
-
-- N/A
-
-### Deprecated
-
-- N/A
-
-### Removed
-
-- N/A
-
-### Fixed
-
-- N/A
-
-### Security
-
-- N/A

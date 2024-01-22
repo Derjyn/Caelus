@@ -5,7 +5,7 @@ Caelus is a single-page application (SPA) weather dashboard.
 __*TODO:*__ Write a more thorough description/overview, add some eye-candy, etc.
 
 ## Version
-0.1.0-alpha
+0.1.1-alpha
 
 ## Features
 
