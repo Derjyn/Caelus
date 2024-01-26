@@ -1,10 +1,16 @@
+/* ========================================================================= */
 /* TAILWIND */
+/* ========================================================================= */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
 
+
+/* ========================================================================= */
 /* CUSTOM FONTS */
+/* ========================================================================= */
 
 /* Sans: Aspekta */
 @font-face {
@@ -15,10 +21,49 @@
   src: url('../font/Aspekta.woff2') format('woff2');
 }
 
+/* Mono: MonaspaceKrypton */
 @font-face {
   font-family: 'MonaspaceKrypton';
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
   src: url('../font/MonaspaceKrypton.woff2') format('woff2');
+}
+
+
+/* ========================================================================= */
+/* CUSTOM CAELUS STUFF */
+/* ========================================================================= */
+
+.d-lines {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 145, 170, 0.2),
+    rgba(0, 145, 170, 0.2) 2px,
+    rgba(0, 0, 0, 0.0) 2px,
+    rgba(0, 0, 0, 0.0) 16px
+  );
+}
+
+
+/* ========================================================================= */
+/* SCROLLBAR APPEARANCE */
+/* ========================================================================= */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.25);
+  @apply rounded shadow-inner;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  @apply rounded shadow-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c7c7c7;
 }

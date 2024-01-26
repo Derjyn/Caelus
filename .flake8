@@ -1,0 +1,5 @@
+[flake8]
+count = True
+exclude = __pycache__, __init__.py
+max-line-length = 100
+output-file = docs/flake8.txt

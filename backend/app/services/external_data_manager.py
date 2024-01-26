@@ -1,13 +1,24 @@
 #!/usr/bin/env python
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+#!-============================================================================
+#!- external_data_manager.py
+#!-    _____          ______ _     _    _  _____
+#!-   / ____|   /\   |  ____| |   | |  | |/ ____|
+#!-  | |       /  \  | |__  | |   | |  | | (___
+#!-  | |      / /\ \ |  __| | |   | |  | |\___ \
+#!-  | |____ / ____ \| |____| |___| |__| |____) |
+#!-   \_____/_/    \_\______|______\____/|_____/
+#!-
+#!-============================================================================
 
-# Imports
+# ==============================================================================
+# IMPORTS
+# ==============================================================================
+
 import httpx
-
 from fastapi import HTTPException
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+# ==============================================================================
 
 # Define a mapping of data types to URLs
 DATA_TYPE_URL_MAP = {
@@ -17,10 +28,12 @@ DATA_TYPE_URL_MAP = {
     # Add more data types and their corresponding URLs as needed
 }
 
+# ==============================================================================
+
 # Header for passing along with requests
 headers = {"User-Agent": "Caelus/0.1.0 (https://github.com/Derjyn/Caelus;)"}
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+# ==============================================================================
 
 
 async def fetch_geocode_data(data_type: str, query_params: dict = None) -> dict:
@@ -58,7 +71,7 @@ async def fetch_geocode_data(data_type: str, query_params: dict = None) -> dict:
             raise HTTPException(status_code=500, detail="Unexpected error occurred")
 
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+# ==============================================================================
 
 
 async def fetch_environment_data(data_type: str, query_params: dict = None) -> dict:
@@ -96,7 +109,7 @@ async def fetch_environment_data(data_type: str, query_params: dict = None) -> d
             raise HTTPException(status_code=500, detail="Unexpected error occurred")
 
 
-# == = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+# ==============================================================================
 
 
 async def fetch_weather_data(data_type: str, query_params: dict = None) -> dict:
@@ -132,4 +145,4 @@ async def fetch_weather_data(data_type: str, query_params: dict = None) -> dict:
             raise HTTPException(status_code=500, detail="Unexpected error occurred")
 
 
-# == EOF = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+#!- EOF =======================================================================

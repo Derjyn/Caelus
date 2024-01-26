@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="h-full w-full dark:bg-gray-100" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caelus</title>
+
+    <link href="/static/css/tailwind.css" rel="stylesheet">   
+</head>
+
+<!-- IMPORT MACROS/TEMPLATES -->
+{% from "components/button.html" import button %}
+{% from "components/icon_fancy.html" import iconFancy %}
+
+<!-- BODY -->
+<body class="h-full w-full scroll-smooth bg-neutral-900 text-white subpixel-antialiased">
+    <!-- LAYOUT CONTAINER -->
+    <div class="grid h-full mx-auto">
+
+    <!-- NAVIGATION/HEADER -->
+    <header class="w-full bg-gray-800 p-4 h-16">
+        <h1 class="text-xl font-bold">Caelus Showcase</h1>
+
+        <nav class="bg-gray-800">
+            <!-- NAV HERE SOME DAY... -->
+        </nav>        
+    </header>    
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container grid grid-cols-2 gap-4 mx-auto p-4">
+        <!-- ALERTS SHOWCASE -->
+        <section id="icons" class="grid gap-4 content-start bg-zinc-700 w-full h-96 p-4">
+            <h2 class="bg-zinc-900 text-lg font-semibold mb-2 p-2 h-10">Alerts</h2>
+            <div class="grid gap-4">
+                <div>
+                    <!-- INFO BUTTON -->
+                    {{ button(
+                        text="Info",
+                        class="bg-blue-500 text-white",                    
+                        action="showAlert('Information', '', 'info', 5, true);")
+                    }}
+                    <!-- SUCCESS BUTTON -->
+                    {{ button(
+                        text="Success",
+                        class="bg-green-500 text-white",
+                        action="showAlert('Success', '', 'success', 3, true);")
+                    }}
+                    <!-- WARNING BUTTON -->
+                    {{ button(
+                        text="Warning",
+                        class="bg-yellow-500 text-white",
+                        action="showAlert('Warning', '', 'warning', 7.5, true);")
+                    }}
+                    <!-- ERROR BUTTON -->
+                    {{ button(
+                        text="Error",
+                        class="bg-red-500 text-white",
+                        action="showAlert('Error', '', 'error', 10, true);")
+                    }}
+                </div>
+            </div>
+        </section>
+        <!-- END ALERTS SHOWCASE -->
+
+        <!-- ICONS SHOWCASE -->
+        <section id="icons" class="grid gap-4 content-start bg-zinc-700 w-full h-96 p-4">
+            <h2 class="bg-zinc-900 text-lg font-semibold mb-2 p-2 h-10">Icons</h2>
+            <div class="grid grid-cols-10 gap-4 place-items-center p-4 overflow-y-scroll">
+                {% include "elements/showcase/icons.html" %}
+            </div>
+        </section>
+        <!-- END ICONS SHOWCASE -->
+
+        <!-- PLACEHOLDER SHOWCASE -->
+        <section id="placeholder_a" class="bg-zinc-700 w-full h-64 p-4">
+            <h2 class="text-lg font-semibold mb-2">Forms</h2>
+            <div class="grid grid-cols-4 gap-4 justify-start">
+            </div>
+        </section>
+        <!-- END PALCEHOLDER SHOWCASE -->
+
+        <!-- PLACEHOLDER SHOWCASE -->
+        <section id="placeholder_b" class="bg-zinc-700 w-full h-64 p-4">
+            <h2 class="text-lg font-semibold mb-2">Placeholder B</h2>
+            <div class="grid grid-cols-4 gap-4 justify-start">
+            </div>
+        </section>
+        <!-- END PALCEHOLDER SHOWCASE -->
+
+        <!-- PLACEHOLDER SHOWCASE -->
+        <section id="placeholder_c" class="bg-zinc-700 w-full h-64 p-4">
+            <h2 class="text-lg font-semibold mb-2">Placeholder C</h2>
+            <div class="grid grid-cols-4 gap-4 justify-start">
+            </div>
+        </section>
+        <!-- END PALCEHOLDER SHOWCASE -->
+
+        <!-- PLACEHOLDER SHOWCASE -->
+        <section id="placeholder_d" class="bg-zinc-700 w-full h-64 p-4">
+            <h2 class="text-lg font-semibold mb-2">Placeholder D</h2>
+            <div class="grid grid-cols-4 gap-4 justify-start">
+            </div>
+        </section>
+        <!-- END PALCEHOLDER SHOWCASE -->
+
+        <!-- ADD MORE SECTIONS FOR DIFFERENT COMPONENTS AS NEEDED -->
+    </main>
+    <!-- END MAIN CONTENT AREA -->
+
+    <!-- FOOTER -->
+    <footer class="w-full h-16 bg-gray-900 p-4 mt-8">
+        <div class="mx-auto text-center">
+            Experiment and showcase of frontend components.
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    </div>
+    <!-- END LAYOUT CONTAINER -->
+
+    <!-- ALERT CONTAINER -->
+    <div id="alert-container" class="fixed w-96 top-5 right-5 space-y-2 z-50"></div>
+    <!-- END ALERT CONTAINER -->
+
+    <!-- JAVASCRIPT -->    
+    <script src="/static/js/htmx.min.js"></script>
+    <script type="module" src="/static/js/caelus/caelus.js"></script>
+</body>
+</html>

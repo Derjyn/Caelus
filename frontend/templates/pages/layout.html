@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="dark min-h-screen scroll-smooth subpixel-antialiased" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caelus</title>
+
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+
+    <script type="module" src="/static/js/caelus/caelus.js"></script>
+</head>
+
+{% from "components/icon.html" import icon %}
+
+<body class="grid grid-flow-row gap-8 min-h-screen bg-caelus-base">
+    <header class="w-full h-30 grid grid-flow-row grid-cols-12 gap-4 place-items-center p-4 bg-caelus-primary border-b border-caelus-secondary">
+        <div class="col-span-2 h-18 p-2">
+            {{ icon(name="cloud-drizzle", size="40", class="stroke-caelus-tertiary", classDiv="float-start mr-4") }}
+            <h1 class="block float-left h-18 p-2 align-bottom text-caelus-tertiary text-4xl font-bold">Caelus</h1>
+        </div>
+
+        <nav class="grid grid-flow-row grid-cols-6 gap-4 col-span-8 items-center justify-center h-18 p-2 text-center">
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Dashboard</a>
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Weather</a>
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Forecast</a>
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Environment</a>
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Satellite</a>
+            <a href="#" class="text-caelus-tertiary hover:text-caelus-primary hover:bg-caelus-tertiary rounded-md px-3 py-2 text-sm font-bold">Alerts</a>
+        </nav>
+
+        <div class="col-span-2 grid grid-flow-row grid-cols-3 place-items-center h-18 p-2">
+            {{ icon(name="square-user-round", size="40", class="stroke-caelus-tertiary") }}
+            {{ icon(name="bolt", size="40", class="stroke-caelus-tertiary") }}
+            {{ icon(name="help-circle", size="40", class="stroke-caelus-tertiary") }}
+        </div>
+    </header>
+
+    <main class="container w-full grid grid-flow-row grid-cols-12 gap-4 mb-auto mx-auto">
+        <section class="h-96 col-span-7 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-96 col-span-5 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-96 col-span-6 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-96 col-span-6 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-64 col-span-5 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-64 col-span-5 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+
+        <section class="h-64 col-span-2 bg-caelus-primary border border-caelus-secondary rounded">
+        </section>
+    </main>
+
+    <footer class="grid grid-cols-12 w-full h-16 p-4 bg-caelus-primary border-t border-caelus-secondary">
+    </footer>
+</body>
+
+</html>

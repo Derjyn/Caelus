@@ -1,0 +1,15 @@
+{% macro iconFancy(name, size, class) %}
+{% set size_container = {
+    "sm": "size-10",
+    "md": "size-12",
+    "lg": "size-16"
+} %}
+{% set size_icon = {
+    "sm": 24,
+    "md": 32,
+    "lg": 48
+} %}
+<div class="grid justify-center content-center {{ size_container[size] }} p-1 border rounded bg-zinc-800 border-slate-900 hover:bg-slate-600 hover:border-slate-500 drop-shadow-md">
+    <i data-icon="{{ name }}" data-size="{{ size_icon[size] }}" data-class="{{ class }}"></i>
+</div>
+{% endmacro %}

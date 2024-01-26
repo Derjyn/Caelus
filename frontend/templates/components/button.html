@@ -1,0 +1,5 @@
+{% macro button(text, class, action) %}
+<button class="w-32 h-9 font-bold rounded drop-shadow-lg {{ class }}" onclick="{{ action }}">
+    {{ text }}
+</button>
+{% endmacro %}
