@@ -5,7 +5,7 @@ Caelus is a single-page application (SPA) weather dashboard.
 __*TODO:*__ Write a more thorough description/overview, add some eye-candy, etc.
 
 ## Version
-0.1.1-alpha
+0.1.2-alpha
 
 ## Features
 
@@ -41,3 +41,7 @@ Caelus is licensed under the GPLv3 License - see the [LICENSE.txt](LICENSE.txt) 
 ## Changelog
 
 For a detailed history of changes, see the [CHANGELOG.md](CHANGELOG.md) file.
+
+## Code of Conduct
+
+See the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for details.
